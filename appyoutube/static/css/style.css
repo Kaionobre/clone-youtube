@@ -254,6 +254,12 @@ header .toggle {
   height: 170px;
 }
 
+.video_items .testeimg {
+  width: 400px;
+  height: 170px;
+  border-radius: 10px;
+}
+
 .video_items a img {
   width: 295px;
   height: 170px;
@@ -285,6 +291,7 @@ header .toggle {
 
 .video_items p {
   margin: 0;
+  
 }
 
 .video_items span {

@@ -1,11 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    gfsdoino
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<main>
+    <section class="video_content grid">
+    {% for video in Video %}
+      <div class="video_items">
+          <a href="single-page.html">
+            <img class="testeimg"src="{{ video.thumbnail.url }}" alt="{{ video.titulo }}">
+          </a>
+        <div class="details flex">
+          <div class="img">
+            <img src="images/logo.png" alt="">
+          </div>
+          <div class="heading">
+            <p>{{ video.titulo }}</p>
+            <span>GorkCoder <i class="fa fa-circle-check"></i> </span>
+            <span>56.7M .1 Week ago</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+  {% endfor %}
+{% endblock %}
