@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #181818; /* Dark background */
+    color: #fff; /* Light text */
+}
+.header-auth {
+    background-color: #181818; /* Darker gray */
+    padding: 16px 0;
+    text-align: center;
+    color: #ff0000; /* YouTube red */
+    font-weight: 1000;
+}
+.header-auth a {
+    color: #ff0000; /* YouTube red */
+    text-decoration: none;
+}
+.header-auth a:hover {
+    text-decoration: dashed;
+}
+.header-auth i {
+    margin-right: 8px;
+}
+.title {
+    text-align: center;
+    margin: 20px 0;
+}
+.caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #212121; /* Darker gray */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.forms {
+    max-width: 400px;
+    width: 100%;
+}
+#label_box {
+    margin-bottom: 16px;
+}
+#labels {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #585858; /* Lighter gray */
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    background-color: #333; /* Darker gray */
+    color: #fff; /* Light text */
+}
+.botão_submit {
+    text-align: center;
+}
+#botao_cadastrar {
+    background-color: #ff0000; /* YouTube red */
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+#botao_cadastrar:hover {
+    background-color: #cc0000; /* Darker red */
+}
