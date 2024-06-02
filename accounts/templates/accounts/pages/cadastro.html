@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="images/png" rel="icon" href="images/icons8-youtube.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" />  
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+</head>
+<body>
+    <header class="header-auth">
+
+        <a href="{% url "home" %}" class="nav_link nav_logo ">
+            <span class="logo_name">
+              <i class="fab fa-youtube"></i>
+              Youtube
+            </span>
+        </a>
+
+    </header>
+    <div class="title">
+        <h1>CADASTRE-SE</h1>
+    </div>
+    <div class="caixa">
+        <form action="{% url 'cadastro' %}" method="POST" class="forms">
+            {% csrf_token %}
+            
+            {% for field in form.visible_fields  %}
+    
+            <div id="label_box">
+                <label id="labels" for="{{ form.id_for_label }}">{{field.label}}</label>
+                {{ field }}
+            </div>
+            
+            {% endfor %}
+    
+            <div class="botão_submit">
+                <button type="submit" id="botao_cadastrar">
+                    Cadastrar
+                </button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+
