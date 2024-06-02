@@ -1,1 +1,42 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+<link rel="stylesheet" href="{% static 'css/perfil.css'%}">
+<div class="profile-header">
+    <img class="cover-photo" src="{% static 'imagens/capa.png' %}" alt="">
+    <div class="profile-info">
+        <img class="profile-photo" src="{% static 'imagens/avatar.png' %}" alt="Foto do canal">
+        <div class="profile-details">
+            <h1 class="channel-name">Nome do Canal</h1>
+            <p class="subscribers">1,234 inscritos</p>
+        </div>
+    </div>
+</div>
+
+<div class="videos-section">
+    <h2>Vídeos</h2>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.carousel').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            arrows: true,
+        });
+    });
+</script>
+
+{% endblock %}

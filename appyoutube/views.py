@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from.models import Video
-from django.views.generic import DetailView, ListView
+from django.views.generic import ListView
 
 class BaseView(ListView):
     model = Video

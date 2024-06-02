@@ -8,7 +8,7 @@
   <link type="images/png" rel="icon" href="images/icons8-youtube.png">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" />
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <title>Youtube </title>
+  <title>{% block title %} Youtube {% endblock %}</title>
 </head>
 
 <body>
@@ -31,6 +31,7 @@
 
         <div class="img">
           <img src="{% static 'imagens/avatar.png' %}" alt="avatar">
+
         </div>
       </div>
 
@@ -157,6 +158,10 @@
   </section>
 
   <script src="{% static 'js/main.js' %}" charset="utf-8"></script>
+
+  <main>
+    {% block content %} {% endblock %}
+  </main>
 </body>
 
 </html>
