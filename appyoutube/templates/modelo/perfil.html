@@ -1,26 +1,38 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
 {% block content %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
-<link rel="stylesheet" href="{% static 'css/perfil.css'%}">
-<div class="profile-header">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+<main>
+<div id="wallpaper">
     <img class="cover-photo" src="{% static 'imagens/capa.png' %}" alt="">
+</div>
+   
+
+<div class="profile-header">
     <div class="profile-info">
         <img class="profile-photo" src="{% static 'imagens/avatar.png' %}" alt="Foto do canal">
         <div class="profile-details">
             <h1 class="channel-name">Nome do Canal</h1>
-            <p class="subscribers">1,234 inscritos</p>
+            <p class="subscribers">1,234 inscritos * <span>5 Inscritos</span></p>
+            <p class="subscribers">Descrição sobre o canal...</p>
+            <input type="button" value="Adicionar Vídeos">
         </div>
     </div>
 </div>
 
-<div class="videos-section">
-    <h2>Vídeos</h2>
-
-</div>
+<h3>Início</h3> <h3>Vídeos</h3>
+<hr>
+    <div class="videos-section">
+        <span>
+        {% for video in videos %}
+        <img class="video_postados" src="{{ video.video.url }}" alt="video.titulo">
+        <p>{{video.titulo}}</p>
+    </div>
+    </span>
+    {% endfor %}
+</main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
