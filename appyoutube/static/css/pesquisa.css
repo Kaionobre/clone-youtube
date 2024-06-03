@@ -1,0 +1,14 @@
+h1, h2, label, li{
+    color: white;
+}
+
+
+#q{
+    width: 25%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    margin-left: 10px;
+}

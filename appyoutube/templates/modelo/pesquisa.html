@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/pesquisa.css' %}">
+<h1>Consulta de Vídeos</h1>
+
+<form method="get">
+    <label for="q">Digite o título do vídeo:</label>
+    <input type="text" id="q" name="q" value="{{ request.GET.q }}">
+    <button type="submit">Buscar</button>
+</form>
+
+<hr>
+
+{% if objects %}
+    <h2>Vídeos Encontrados</h2>
+    <ul>
+        {% for video in objects %}
+            <li>{{ video.titulo }} - Outros campos do vídeo aqui</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    {% if request.GET.q %}
+        <p>Nenhum vídeo encontrado com o título "{{ request.GET.q }}".</p>
+    {% endif %}
+{% endif %}
+{% endblock %}

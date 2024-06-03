@@ -13,4 +13,14 @@ class PerfilView(ListView):
     context_object_name = 'thumb'
     paginate_by = 3
 
-
+class ConsultaView(ListView):
+    model = Video
+    template_name = 'modelo/pesquisa.html'
+    context_object_name = 'objects'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')
+        if query:
+            queryset = queryset.filter(titulo__icontains=query)
+        return queryset
