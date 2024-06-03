@@ -24,6 +24,12 @@
         <h1>CADASTRE-SE</h1>
     </div>
     <div class="caixa">
+        {% for message in messages %}
+            <div class="alert alert-dark" role="alert">
+                <p id="messages">{{ message }}</p>
+            </div>
+        {% endfor %}
+
         <form action="{% url 'cadastro' %}" method="POST" class="forms">
             {% csrf_token %}
             
