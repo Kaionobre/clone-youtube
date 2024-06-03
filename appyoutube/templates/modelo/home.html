@@ -3,26 +3,25 @@
 
 
 {% block content %}
-<main>
-    <section class="video_content grid">
-    {% for video in Video %}
-      <div class="video_items">
-          <a href="single-page.html">
-            <img class="testeimg"src="{{ video.thumbnail.url }}" alt="{{ video.titulo }}">
-          </a>
-        <div class="details flex">
-          <div class="img">
-            <img src="images/logo.png" alt="">
+      <main>
+        <section class="video_content grid">
+          {% for video in Video %}
+          <div class="video_items">
+              <a href="single-page.html">
+                <img class="testeimg"src="{{ video.thumbnail.url }}" alt="{{ video.titulo }}">
+              </a>
+            <div class="details flex">
+              <div class="img">
+                <img src="images/logo.png" alt="">
+              </div>
+              <div class="heading">
+                <p>{{ video.titulo }}</p>
+                <span>GorkCoder <i class="fa fa-circle-check"></i> </span>
+                <span>56.7M .1 Week ago</span>
+              </div>
+            </div>
           </div>
-          <div class="heading">
-            <p>{{ video.titulo }}</p>
-            <span>GorkCoder <i class="fa fa-circle-check"></i> </span>
-            <span>56.7M .1 Week ago</span>
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
-  </main>
-  {% endfor %}
+          {% endfor %}
+        </section>
+      </main>
 {% endblock %}

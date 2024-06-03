@@ -10,5 +10,6 @@ class HomeView(ListView):
 class PerfilView(ListView):
     model = Video
     template_name = 'modelo/perfil.html'
+    context_object_name = 'thumb'
 
 

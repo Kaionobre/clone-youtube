@@ -24,15 +24,23 @@
 
 <h3>Início</h3> <h3>Vídeos</h3>
 <hr>
-    <div class="videos-section">
-        <span>
-        {% for video in videos %}
-        <img class="video_postados" src="{{ video.video.url }}" alt="video.titulo">
-        <p>{{video.titulo}}</p>
+    <section class="video_content grid">
+    {% for video in thumb %}
+    <div class="video_items">
+        <a href="single-page.html">
+          <img class="testeimg"src="{{ video.thumbnail.url }}" alt="{{ video.titulo }}">
+        </a>
+      <div class="details flex">
+        <div class="heading">
+          <p>{{ video.titulo }}</p>
+          
+        </div>
+      </div>
     </div>
-    </span>
     {% endfor %}
+  </section>
 </main>
+  
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
