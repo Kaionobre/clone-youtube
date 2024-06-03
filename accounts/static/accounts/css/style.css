@@ -81,3 +81,8 @@ input[type="password"] {
 #botao_cadastrar:hover {
     background-color: #cc0000; /* Darker red */
 }
+.login{
+    font-size: 12px;
+    margin-top: -6%;
+    padding-bottom: 5%;
+}

@@ -12,7 +12,7 @@
 <body>
     <header class="header-auth">
 
-        <a href="{% url "home" %}" class="nav_link nav_logo ">
+        <a href="{% url 'home' %}" class="nav_link nav_logo ">
             <span class="logo_name">
               <i class="fab fa-youtube"></i>
               Youtube
@@ -35,6 +35,8 @@
             </div>
             
             {% endfor %}
+
+            <p class="login">Já tem login? <a href="{% url 'login' %}">Faça Login</a></p>
     
             <div class="botão_submit">
                 <button type="submit" id="botao_cadastrar">

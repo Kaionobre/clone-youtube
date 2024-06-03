@@ -15,13 +15,20 @@
     <div class="profile-info">
         <img class="profile-photo" src="{% static 'imagens/avatar.png' %}" alt="Foto do canal">
         <div class="profile-details">
-            <h1 class="channel-name">Nome do Canal</h1>
+            <h1 class="channel-name">{{ user.username }}</h1>
             <p class="subscribers">1,234 inscritos * <span>5 Inscritos</span></p>
             <p class="subscribers">Descrição sobre o canal...</p>
-            <input type="button" value="Adicionar Vídeos">
+            <a class="button" href="{% url 'upload' %}"><input type="button" value="Adicionar Vídeos"></a>
         </div>
     </div>
 </div>
+
+<a href="{% url 'logout' %}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    Logout
+</a>
+<form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none;">
+    {% csrf_token %}
+</form>
 
 <h3>Início</h3> <h3>Vídeos</h3>
 <hr>

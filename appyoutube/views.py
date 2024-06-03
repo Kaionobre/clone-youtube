@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from.models import Video
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 class HomeView(ListView):
     model = Video
     template_name = 'modelo/home.html'
     context_object_name = 'Video'
+    login_url = '/cadastro/'
 
-class PerfilView(ListView):
+class PerfilView(LoginRequiredMixin, ListView):
     model = Video
     template_name = 'modelo/perfil.html'
     context_object_name = 'thumb'
@@ -37,3 +40,9 @@ class OrdenacaoView(ListView):
             queryset = queryset.filter(titulo__icontains=query)
         orderby = self.request.GET.get('orderby','-pub_date')  
         return queryset.order_by(orderby)
+    
+class UploadView(CreateView):
+    model = Video
+    template_name = 'modelo/upload.html'
+    fields = ['titulo', 'descricao']
+

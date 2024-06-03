@@ -28,11 +28,16 @@
           <i class="fa-solid fa-grip"></i>
           <i class="fa-solid fa-bell"></i>
         </div>
-
+        {% if user.is_authenticated %}
         <div class="img">
-          <img src="{% static 'imagens/avatar.png' %}" alt="avatar">
-
-        </div>
+          <a href="{% url 'perfil' %}">
+            <img src="{% static 'imagens/avatar.png' %}" alt="avatar"></a>
+        {% else %}
+          <a href="{% url 'cadastro' %}">
+            <img src="{% static 'imagens/avatar.png' %}" alt="Cadastro">
+        </a>
+      </div>
+  {% endif %}
       </div>
 
       <div class="toggle">
