@@ -1,0 +1,24 @@
+h1, p {
+    color: white;
+}
+
+select {
+    width: 220px; 
+    padding: 5px; 
+    margin-right: 10px;
+    font-size: 14px; 
+    background-color: #272727;
+    color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+button{
+    width: 80px;
+    height: 31px;
+    padding: 5px;
+    background-color: #272727;
+    color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+}

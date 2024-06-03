@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/ordenacao.css' %}">
+<form method="GET">
+    <select name="orderby">
+        <option value="pub_date" >Data de Publicação</option>
+        <option value="titulo" {% if request.GET.orderby == 'titulo' %}selected{% endif %}>Ordem Alfabética (A-Z)</option>
+        <option value="-titulo" {% if request.GET.orderby == '-titulo' %}selected{% endif %}>Ordem Alfabética (Z-A)</option>
+    </select>
+    <button type="submit">Pesquisar</button>
+   </form>
+
+<hr>
+<h1>Consulta de Vídeos {% if request.GET.q %}- Pesquisa: "{{ request.GET.q }}"{% endif %}</h1>
+
+{% for video in object_list %}
+    <p>{{ video.titulo }} - {{ video.pub_date }} 
+    </p>
+{% empty %}
+    <p>Nenhum vídeo encontrado.</p>
+{% endfor %}
+
+
+{% endblock %}

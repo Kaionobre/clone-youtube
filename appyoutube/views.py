@@ -24,3 +24,16 @@ class ConsultaView(ListView):
         if query:
             queryset = queryset.filter(titulo__icontains=query)
         return queryset
+    
+class OrdenacaoView(ListView):
+    model = Video
+    template_name = 'modelo/ordenacao.html'
+    context_object_name = 'objects'
+    
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')
+        if query:
+            queryset = queryset.filter(titulo__icontains=query)
+        orderby = self.request.GET.get('orderby','-pub_date')  
+        return queryset.order_by(orderby)
