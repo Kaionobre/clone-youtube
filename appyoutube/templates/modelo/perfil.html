@@ -3,6 +3,7 @@
 {% block content %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/paginacao.css' %}">
 <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
 <main>
 <div id="wallpaper">
@@ -39,6 +40,31 @@
     </div>
     {% endfor %}
   </section>
+
+  {% if is_paginated %}
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+            <li><a href="?page=1">&laquo; Primeira</a></li>
+            <li><a href="?page={{ page_obj.previous_page_number }}">&lsaquo; Anterior</a></li>
+        {% endif %}
+        
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <li class="active"><span>{{ num }}</span></li>
+            {% else %}
+                <li><a href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+        
+
+
+        {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}">Próxima &rsaquo;</a></li>
+            <li><a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a></li>
+        {% endif %}
+    </ul>
+    {% endif %}
+
 </main>
   
 

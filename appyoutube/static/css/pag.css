@@ -1,0 +1,103 @@
+/* styles.css */
+
+/* Estilo para o contêiner da lista de posts */
+.post-list-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo para o cabeçalho da lista de posts */
+  .post-list-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Estilo para os itens da lista de posts */
+  .post-item {
+    list-style: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  /* Estilo para os links dentro dos itens da lista de posts */
+  .post-item a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+  }
+  
+  /* Estilo para os botões de ação dentro dos itens da lista de posts */
+  .post-item button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Estilo para os botões de ação quando hover */
+  .post-item button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo para o link de detalhes */
+  .post-link-name {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Estilo para o link de detalhes quando hover */
+  .post-link-name:hover {
+    color: #007bff;
+  }
+  
+  /* Estilo da filtragem */
+  .post-list-container form {
+      margin-bottom: 20px;
+  }
+  
+  .post-list-container form input[type="text"] {
+      padding: 5px;
+      width: 200px;
+  }
+  
+  .post-list-container form button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+  }
+  
+  /* Estilo para o elemento select */
+  select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Estilo para quando o select está focado */
+  select:focus {
+    outline: none;
+    border-color: #007bff; /* Cor azul para indicar foco */
+  }
+  
+  /* Estilo para as opções dentro do select */
+  select option {
+    padding: 8px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
