@@ -23,7 +23,15 @@
         <h1>FAÇA LOGIN</h1>
     </div>
 
+    
     <div class="caixa">
+
+        {% for message in messages %}
+            <div class="alert alert-dark" role="alert">
+                <p id="messages">{{ message }}</p>
+            </div>
+        {% endfor %}
+
         <form action="{% url 'login' %}" method="POST" class="form">
             {% csrf_token %}
 
@@ -36,6 +44,7 @@
             
             {% endfor %}
 
+            <p class="login">Não possui cadastro? <a href="{% url 'cadastro' %}">Faça Agora</a></p>
 
             <div class="botão_submit">                
                 <button type="submit" id="botao_cadastrar">
