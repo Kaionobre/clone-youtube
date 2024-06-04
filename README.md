@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este é um clone básico do YouTube desenvolvido usando Django, HTML, CSS e JavaScript. O objetivo deste projeto é demonstrar a criação de um site de compartilhamento de vídeos com funcionalidades básicas de upload, visualização e pesquisa de vídeos.
+Este é um web site que tem como inspiração o YouTube, este web site foi desenvolvido usando Django, HTML, CSS e JavaScript. O objetivo deste projeto é demonstrar a criação de um site de compartilhamento de vídeos com funcionalidades básicas de upload, visualização e pesquisa de vídeos.
 
 ## Funcionalidades
 
