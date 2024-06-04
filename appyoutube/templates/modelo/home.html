@@ -7,16 +7,16 @@
         <section class="video_content grid">
           {% for video in Video %}
           <div class="video_items">
-              <a href="single-page.html">
+              <a href="{% url 'video' %}">
                 <img class="testeimg"src="{{ video.thumbnail.url }}" alt="{{ video.titulo }}">
               </a>
             <div class="details flex">
               <div class="img">
-                <img src="images/logo.png" alt="">
+                <img src="{% static 'imagens/avatar.png' %}" alt="avatar"></a>
               </div>
               <div class="heading">
                 <p>{{ video.titulo }}</p>
-                <span>GorkCoder <i class="fa fa-circle-check"></i> </span>
+                <span>Iago Games <i class="fa fa-circle-check"></i> </span>
                 <span>56.7M .1 Week ago</span>
               </div>
             </div>

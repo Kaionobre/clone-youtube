@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+
+<h1> Editar vídeo</h1>
+<hr>
+<form id="form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+ <button type="button" class="botaoc" id="thumb">Escolher Thumbnail</button>
+
+ <button type="submit" id="button_enviar"> Salvar Alteraçoes</button>
+</form>
+
+<script src="{% static 'js/update.js' %}" charset="utf-8"></script>
+
+{% endblock %}

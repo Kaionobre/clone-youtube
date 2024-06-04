@@ -1,0 +1,50 @@
+h1{
+    color: white;
+    text-align: center;
+}
+
+#id_descricao, #id_titulo{
+    display: flex;
+    margin: 0 auto;
+}
+
+label{
+    color: white;
+    margin: 47%;
+}
+
+button{
+    display: flex;
+    margin: 0 auto;
+}
+
+#id_thumbnail{
+ display: none;
+}
+
+p{
+    text-align: center;
+}
+
+.botaoc {
+    display: flex;
+    margin: 10px auto;
+    cursor: pointer;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    background-color: #3EA6FF;
+    border-radius: 6px;
+
+}
+
+#button_enviar{
+    padding: 10px;
+    display: flex;
+    margin: 0 auto;
+    background-color: #aaaaaa;
+    border-radius: 6px;
+}

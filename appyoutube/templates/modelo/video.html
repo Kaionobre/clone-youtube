@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <link type="images/png" rel="icon" href="images/icons8-youtube.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/video.css' %}">
+  <title>Youtube </title>
+
+  <main class="single_pages">
+    <section class="video_items flex">
+      <div class="left">
+        <div class="left_content">
+          <video controls>
+            <source src="{% static 'imagens/video.mp4' %}" type="video/mp4" poster="images/video_images/back1.jpg">
+          </video>
+
+
+          <!--        video tages            -->
+          <div class="tag">
+            <label class="tags">#web #webdesign #Frontend </label>
+            <p>Aula de web I</p>
+          </div>
+          <!--        video tages            -->
+
+          <!--        total viwer            -->
+          <div class="view flex2 border_bottom">
+            <div class="view-text">
+              <span>693,348 visualizaçoes Estreou há 53 minutos</span>
+            </div>
+
+            <div class="flex">
+              <div class="icon">
+                <i class="fa fa-thumbs-up"></i>
+                <label>225k</label>
+              </div>
+              <div class="icon">
+                <i class="fa fa-thumbs-down"></i>
+                <label>PAIA</label>
+              </div>
+              <div class="icon">
+                <i class="fa fa-share"></i>
+                <label>COMPARTILHAR</label>
+              </div>
+              <div class="icon">
+                <i class="fa fa-scissors"></i>
+                <label>CLIPE</label>
+              </div>
+              <div class="icon">
+                <i class="fa fa-bookmark"></i>
+                <label>SALVAR</label>
+              </div>
+              <div class="icon">
+                <i class="fa fa-ellipsis"></i>
+              </div>
+            </div>
+          </div>
+
+
+          <!--        video detalhes            -->
+          <div class="details flex border_bottom">
+            <div class="img">
+              <img src="{% static 'imagens/avatar.png' %}" alt="">
+            </div>
+            <div class="heading">
+              <h4>Iago Games <i class="fa fa-circle-check"></i> </h4>
+              <span>15M Inscritos</span>
+              <h5>Projeto de WEB 1 </h5>
+              <h5>Aula de Matheus</h5>
+              <span>Mostrar mais</span>
+            </div>
+          </div>
+
+
+
+          <!--        video comentarios            -->
+          <div class="comment">
+            <div class="comment-heading flex">
+              <h4>120 comentários</h4>
+              <h4> <i class="fa fa-list-ul"></i> <label>Ordenar por</label> </h4>
+            </div>
+          </div>
+
+          <!--        video comment  by self           -->
+          <div class="details comment_self flex">
+            <div class="img">
+              <img src="{% static 'imagens/avatar.png' %}" alt="">
+            </div>
+            <div class="heading">
+              <input type="text" placeholder="Adicione um comentário....">
+            </div>
+          </div>
+          <!--        video comment  by other           -->
+
+          <div class="details_Comment">
+            <div class="details flex">
+              <div class="img">
+                <img src="{% static 'imagens/avatar.png' %}" />
+              </div>
+              <div class="heading">
+                <h4>Matheus <span>2 meses atrás</span> </h4>
+                <p> Ficou mais ou menos</p>
+                <div class="comment-like flex">
+                  <div class="icon">
+                    <i class="fa fa-thumbs-up"></i>
+                    <label>5</label>
+                  </div>
+                  <div class="icon">
+                    <i class="fa fa-thumbs-down"></i>
+                    <label>PAIA</label>
+                  </div>
+                  <div class="icon">
+                    <label>RESPONDER</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--        video comment  by other           -->
+          <div class="replay">
+            <label class="tags"> <i class="fa fa-caret-up"></i> Ocultar resposta</label>
+            <div class="replay-details flex">
+              <div class="img">
+                <img src="{% static 'imagens/avatar.png' %}" alt="">
+              </div>
+              <div class="text">
+                <h4> <label>Iago Games</label> <span>2 meses atrás</span> </h4>
+                <p>vlw</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!--        no replay           -->
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        
+        <div class="right_content">
+          <button class="chat">Mostrar Replay do Bate-Papo
+          </button>
+          
+          <div class="tags">
+            <label class="tags-bg">Todos</label>
+            <label class="tags-bg">Python</label>
+            <label class="tags-bg">Django</label>
+            <label class="tags-bg">Javascript</label>
+          </div>
+          {% for video in Video %}
+          <div class="video_items vide_sidebar flex">
+            <a href="{% url 'video' %}">
+              <img class="testeimg1"src="{{ video.thumbnail.url }}" alt="{{ video.titulo }}">
+            </a>
+            <div class="details">
+              <p>{{ video.titulo }}</p>
+              <span>Iago Games <i class="fa fa-cricle-check"> </i> </span>
+              <span>56.7M . 1 semana atrás</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+  <script src="{% static 'js/main.js' %}" charset="utf-8"></script>
+  {% endblock %}

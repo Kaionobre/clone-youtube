@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from.models import Video
-from django.views.generic import ListView, CreateView
+from accounts.forms import CadastroForms
+from.models import Video, Perfil
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+
 
 
 class HomeView(ListView):
@@ -11,6 +14,7 @@ class HomeView(ListView):
     login_url = '/cadastro/'
 
 class PerfilView(LoginRequiredMixin, ListView):
+    model = Perfil
     model = Video
     template_name = 'modelo/perfil.html'
     context_object_name = 'thumb'
@@ -44,5 +48,23 @@ class OrdenacaoView(ListView):
 class UploadView(CreateView):
     model = Video
     template_name = 'modelo/upload.html'
-    fields = ['titulo', 'descricao']
+    fields = ['titulo','descricao','video','thumbnail']
+    success_url = reverse_lazy('perfil')
+
+class DeleteView(DeleteView):
+    model = Video
+    success_url = reverse_lazy('perfil')
+
+class UpdateView(UpdateView):
+    model = Video
+    fields = ['titulo','descricao', 'thumbnail']
+    template_name = 'modelo/update.html'
+    success_url = '/perfil/'
+
+class VideoView(ListView):
+    model = Video
+    template_name = 'modelo/video.html'
+    context_object_name = 'Video'
+
+
 

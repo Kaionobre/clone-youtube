@@ -1,8 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/upload.css' %}">
+
+ <h1> Enviar vídeos</h1>
+ <hr>
 
 
+    <form method="post" enctype="multipart/form-data">
+        <img src="{% static 'imagens/seta.png' %}" alt="Clique para enviar um arquivo" class="clickable" id="clickable-image">
+        <p id="white">Preencha o Título e sua Descriçao</p>
+       
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p>Escolha o Vídeo e sua Thumbnail</p>
+            <button type="button" class="botaoc" id="video">Escolher Video</button>
+            <button type="button" class="botaoc" id="thumb">Escolher Thumbnail</button>
+            <button type="submit" id="button_enviar">Enviar</button>
+        </form>
+
+<script src="{% static 'js/upload.js' %}" charset="utf-8"></script>
 
 
 {% endblock %}

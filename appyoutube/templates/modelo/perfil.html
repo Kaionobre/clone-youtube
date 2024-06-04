@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/paginacao.css' %}">
 <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+<link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
 <main>
 <div id="wallpaper">
     <img class="cover-photo" src="{% static 'imagens/capa.png' %}" alt="">
@@ -13,12 +14,13 @@
 
 <div class="profile-header">
     <div class="profile-info">
-        <img class="profile-photo" src="{% static 'imagens/avatar.png' %}" alt="Foto do canal">
+        <img class="profile-photo" src="{% static 'imagens/avatar.png'%}" alt="Foto do canal">
         <div class="profile-details">
             <h1 class="channel-name">{{ user.username }}</h1>
             <p class="subscribers">1,234 inscritos * <span>5 Inscritos</span></p>
-            <p class="subscribers">Descrição sobre o canal...</p>
-            <a class="button" href="{% url 'upload' %}"><input type="button" value="Adicionar Vídeos"></a>
+            <p class="subscribers">Esse é o meu canal</p>
+
+            <a class="button" href="{% url 'upload' %}"><button>Adicionar Videos</button></a>
         </div>
     </div>
 </div>
@@ -35,13 +37,21 @@
     <section class="video_content grid">
     {% for video in thumb %}
     <div class="video_items">
-        <a href="single-page.html">
+        <a href="{% url 'video' %}">
           <img class="testeimg"src="{{ video.thumbnail.url }}" alt="{{ video.titulo }}">
         </a>
       <div class="details flex">
         <div class="heading">
           <p>{{ video.titulo }}</p>
-          
+          <div class="teste1">
+              <form action="{% url 'delete' video.pk%}" method="post">
+                {% csrf_token %}
+                <button id="buttons"><i class="fa-regular fa-trash-can"></i></button>
+              </form>
+              <a href="{% url 'update' video.pk %}">
+                <button id="buttons" ><i class="fa-regular fa-pen-to-square"></i></button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
